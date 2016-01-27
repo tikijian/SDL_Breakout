@@ -1,15 +1,9 @@
-//
-//  main.cpp
-//  SDL_Breakout
-//
-//  Created by Тимур on 27.01.16.
-//  Copyright © 2016 Tikijian. All rights reserved.
-//
 
 #include <iostream>
+#include "Game.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Game game;
+    game.run();
     return 0;
 }
