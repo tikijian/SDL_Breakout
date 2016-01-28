@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include "Bat.hpp"
+#include "Block.hpp"
 
 
 class Game
@@ -13,11 +14,16 @@ private:
     SDL_Renderer* gfx = NULL;
     
     void init();
+    void resetBlocks();
     
 public:
     static const int SCREEN_W = 640;
     static const int SCREEN_H = 480;
+    static const int BLOCK_COLS = 4;
+    static const int BLOCK_ROWS = 6;
+    
     Bat bat;
+    Block blocks[24];
     
     Game();
     ~Game();

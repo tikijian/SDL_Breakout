@@ -1,5 +1,5 @@
 #include "Game.hpp"
-
+#include "Block.hpp"
 
 Game::Game()
 {
@@ -20,7 +20,7 @@ Game::~Game()
 
 void Game::init()
 {
-    
+    resetBlocks();
 }
 
 void Game::run()
@@ -41,6 +41,10 @@ void Game::render()
     SDL_RenderClear(gfx);
     
     bat.render(gfx);
+    
+    for (int i = 0; i < 24; i++) {
+        blocks[i].render(gfx);
+    }
     
     SDL_RenderPresent(gfx);
 }
@@ -74,6 +78,25 @@ bool Game::update()
     }
     
     return is_running;
+}
+
+void Game::resetBlocks()
+{
+    int x = 0;
+    int y = 2;
+    int j = 0;
+    
+    for (int i = 0; i < BLOCK_COLS; i++) {
+        for (int k = 0; k < BLOCK_ROWS; k++) {
+            blocks[j].rect.x = x + Block::BLOCK_WIDTH;
+            blocks[j].rect.y = y;
+            x += Block::BLOCK_WIDTH;
+            j++;
+        }
+        
+        y += Block::BLOCK_HEIGHT + 2;
+        x = 0;
+    }
 }
 
 SDL_Renderer* Game::getRenderer()

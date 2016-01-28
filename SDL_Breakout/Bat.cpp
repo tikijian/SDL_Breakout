@@ -29,6 +29,5 @@ void Bat::update()
         rect.x += 10;
         if (rect.x > Game::SCREEN_W - BAT_WIDTH) 
             rect.x = Game::SCREEN_W - BAT_WIDTH;
-        
     }
 }
