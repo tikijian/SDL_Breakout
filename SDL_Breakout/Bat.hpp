@@ -14,4 +14,5 @@ public:
 
     void render(SDL_Renderer *gfx);
     void update();
+
 };

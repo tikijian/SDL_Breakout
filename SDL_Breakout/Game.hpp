@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include "Bat.hpp"
 #include "Block.hpp"
+#include "Ball.hpp"
 
 
 class Game
@@ -23,6 +24,7 @@ public:
     static const int BLOCK_ROWS = 6;
     
     Bat bat;
+    Ball ball;
     Block blocks[24];
     
     Game();

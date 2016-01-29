@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Block.hpp"
+#include "Ball.hpp"
 
 Game::Game()
 {
@@ -21,6 +22,7 @@ Game::~Game()
 void Game::init()
 {
     resetBlocks();
+    ball.init(gfx);
 }
 
 void Game::run()
@@ -28,6 +30,9 @@ void Game::run()
     while( update() )
     {
         bat.update();
+        ball.checkBatCollision(&bat);
+        ball.update();
+        
         
         render();
         
@@ -45,6 +50,8 @@ void Game::render()
     for (int i = 0; i < 24; i++) {
         blocks[i].render(gfx);
     }
+    
+    ball.render(gfx);
     
     SDL_RenderPresent(gfx);
 }
