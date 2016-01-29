@@ -30,9 +30,10 @@ void Game::run()
     while( update() )
     {
         bat.update();
-        ball.checkBatCollision(&bat);
         ball.update();
         
+        ball.checkBatCollision(&bat);
+        ball.checkBlockCollision(blocks);
         
         render();
         

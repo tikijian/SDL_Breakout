@@ -57,7 +57,19 @@ void Ball::checkBatCollision(Bat *bat)
     if (SDL_IntersectRect(&rect, &bat->rect, &r) == SDL_TRUE ) {
         velY = -(velY);
     }
+}
 
+void Ball::checkBlockCollision(Block *blocks)
+{
+    SDL_Rect r;
+    for (int i = 0; i < Game::BLOCKS_COUNT; i++) {
+        if (blocks[i].isDestroyed)
+            continue;
         
+        if (SDL_IntersectRect(&rect, &blocks[i].rect, &r) == SDL_TRUE ) {
+            blocks[i].isDestroyed = true;
+            velY = abs(velY);
+        }
+    }
 }
 

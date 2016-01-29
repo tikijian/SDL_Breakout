@@ -22,10 +22,11 @@ public:
     static const int SCREEN_H = 480;
     static const int BLOCK_COLS = 4;
     static const int BLOCK_ROWS = 6;
+    static const int BLOCKS_COUNT = 24;
     
     Bat bat;
     Ball ball;
-    Block blocks[24];
+    Block blocks[ BLOCKS_COUNT ];
     
     Game();
     ~Game();

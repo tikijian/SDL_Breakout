@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 #include "GameObject.hpp"
-#include "Bat.hpp"
+//#include "Bat.hpp"
 
 class Ball: public GameObject
 {
@@ -21,4 +21,5 @@ public:
     void update();
     void init(SDL_Renderer *gfx);
     void checkBatCollision(Bat *bat);
+    void checkBlockCollision(Block *blocks);
 };

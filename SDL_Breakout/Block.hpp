@@ -9,6 +9,7 @@ class Block: public GameObject
 public:
     static const Uint8 BLOCK_WIDTH  = 80;
     static const Uint8 BLOCK_HEIGHT = 20;
+    bool isDestroyed = false;
     
     Block();
     

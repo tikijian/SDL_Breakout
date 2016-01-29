@@ -13,6 +13,8 @@ Block::Block()
 
 void Block::render(SDL_Renderer *gfx)
 {
+    if (isDestroyed) return;
+    
     SDL_SetRenderDrawColor(gfx, red, green, blue, 255);
     SDL_RenderFillRect(gfx, &rect);
 }
